@@ -2,7 +2,7 @@
 
 I have been going back and re-doing retired boxes on Hack The Box, with a focus on writing up the process of compromising each box. For flavour, I'm also providing a bit of commentary around thinking through the attack from the attacker's perspective, as well as thinking about it from a system administrator/business owner perspective.
 
-##The Mission
+## The Mission
 
 Hack The Box is a platform to learn and practice penetration testing techniques. Hack The Box makes virtual machines ("boxes") available for users to scan and exploit. It is ultimately a "capture the flag"-type of game, with the goal being to find and retrieve two "flags" or strings, one which can be accessed by a regular user on the box (the "user flag") and one that can only be accessed by the root user (the "root flag").
 
@@ -64,7 +64,7 @@ Let's demonstrate why failing to patch is a problem.
 
 Those who have been carefully reading this post might be slightly surprised at this section title. Normally, you get a foothold in the target system, enumerate the system further to find a path to escalate your privileges, and then--after compromising the administrator account--you can get the root flag. That won't be necessary here since we're going to fully compromise the system in one step.
 
-Both CVE-2017-0143 and CVE-2008-4250 would be viable paths forward to compromising the box. Since we have been discussing EternalBlue, let's demonstrate how it works. By simply googling "MS17-010 exploit", we can see from the first result that there is a metasploit module for this vulnerability.
+Both CVE-2017-0143 and CVE-2008-4250 would be viable paths forward to compromising the box. Since we have been discussing EternalBlue, let's demonstrate how it works. By simply googling "MS17-010 exploit", we can see from the [first result that there is a metasploit module for this vulnerability](https://www.rapid7.com/db/modules/exploit/windows/smb/ms17_010_eternalblue).
 
 Start Metasploit with `msfconsole`:
 
